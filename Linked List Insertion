@@ -1,0 +1,32 @@
+ class Node {
+     int data;
+     Node next;
+     Node(int data) { 
+         data = data;
+         next=null;
+         }
+ }
+
+class Solution
+{
+    Node insertAtBeginning(Node head, int data)
+    {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        return newNode;
+    }
+    
+    Node insertAtEnd(Node head, int data)
+    {
+       Node newNode = new Node(data);
+        if (head == null) {
+            return newNode;
+        }
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = newNode;
+        return head;
+    }
+}
